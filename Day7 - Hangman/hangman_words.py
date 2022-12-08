@@ -1,0 +1,1 @@
+word_pool = ['water','mouse','house','egg','candle','pencil']

@@ -1,66 +1,10 @@
 #!/usr/local/bin/python
 
 import random
+from hangman_art import logo,hangman_error_list
+from hangman_words import word_pool
 
-hangman_error_list = ['''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========
-''']
-
-word_pool = ['water','mouse','house','egg','candle','pencil']
-
+print(logo)
 #get a number between 0 and max lenght of word pool
 random_number = random.randrange(0,len(word_pool))
 
