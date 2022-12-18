@@ -26,8 +26,7 @@ def playagain():
         os.system('cls')
         return True
 
-def showScore(total_score1, total_score2, player, player_dict,round, dict):
-    #print(f' total_score:{total_score}, player:{player}, player_dict:{player_dict}, round:{round}')
+def showScore(total_score1, total_score2, round, dict):
     if total_score1 >= 21 or total_score2 >= 21 :
         print(f'Your final hand:{players_dict["person"]["cards"]} , final score: {total_score1} ')
         print(f"Computer's final hand:{players_dict['computer']['cards']}, final score: {total_score2} ")
@@ -49,7 +48,7 @@ def showScore(total_score1, total_score2, player, player_dict,round, dict):
 
 def compareScore(players_dict):
        
-    if players_dict["person"]["score"] < 21:
+    if players_dict["person"]["score"] <= 21:
         print('You WIN! Congratulations!')
     else:
         print("You went over, you lose :'( ") 
@@ -75,7 +74,7 @@ if wanna_play == 'y':
         addCards(person, randomNumber(card_list))
         addCards( person, randomNumber(card_list))
         addCards( computer, randomNumber(card_list))
-        continue_play = showScore(calcScore(person),calcScore(computer), 'person', players_dict["person"]["cards"],first_round,players_dict )
+        continue_play = showScore(calcScore(person),calcScore(computer), first_round,players_dict )
         first_round = False
          
                
@@ -84,7 +83,7 @@ if wanna_play == 'y':
     while continue_play == True:
         addCards(person, randomNumber(card_list))
         addCards( computer, randomNumber(card_list))
-        continue_play = showScore(calcScore(person),calcScore(computer), 'person', players_dict["person"]["cards"],first_round,players_dict )
+        continue_play = showScore(calcScore(person),calcScore(computer), first_round,players_dict )
         
         
             
